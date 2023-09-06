@@ -27,13 +27,24 @@ class _ExpensesState extends State<Expenses> {
     ),
   ];
 
+  void _openAddExpenseOverlay() {
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) {
+          return const Text('Model Bottom Sheet');
+        });
+  }
+
   @override
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Text('Expense Tracker'),
+        title: const Text('Expense Tracker'),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.add),)
+          IconButton(
+            onPressed: _openAddExpenseOverlay,
+            icon: const Icon(Icons.add),
+          )
         ],
       ),
       body: Column(
