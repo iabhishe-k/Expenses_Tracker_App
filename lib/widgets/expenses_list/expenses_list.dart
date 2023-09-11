@@ -16,7 +16,10 @@ class ExpensesList extends StatelessWidget {
         key: ValueKey(expenses[index]),
         background: Container(
           color: Theme.of(context).colorScheme.error,
+          alignment: Alignment.centerRight,
+          child: const Icon(Icons.delete),
         ),
+        direction: DismissDirection.endToStart,
         onDismissed: (direction) {
           onRemoveExpense(expenses[index]);
         },
